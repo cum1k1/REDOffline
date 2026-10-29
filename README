@@ -1,0 +1,54 @@
+
+REDOffline - RED Offline Package
+=========================================================
+
+This is REDOffline, data processing package in RED collaboration. 
+It is created to analyse scintific data in the form of waveforms of 
+signals from real detector.
+
+This software is distributed in the hope that it will be useful, but
+'AS IS', without any warrany, expressed or implied, of any kind, 
+even merchantability or fitness for a particular purpose.
+
+Full information on REDOffline is available on the web:
+
+    http://enpl.mephi.ru/twiki/bin/view.pl/Main/RedOffline
+
+Installation
+============
+
+Prerequisities:
+    cmake >= 2.8
+    ROOT >= 5.34
+    C++ compiler (gcc >=4.0)
+    make
+
+The current stable version of REDOffline is available from
+  https://lab344.mephi.ru/Current Activity/Software/REDOffline/REDOffline-latest.tar.bz2
+Just download archive file and unpack it to a suitable directory.
+
+A development version can be acquired from git repository
+  git clone ssh://<you>@lab344.mephi.ru/home/git/REDOffline.git/
+
+In both cases you will get a tree of source files of the project.
+Compile it with usual commands:
+  $ mkdir build && cd build
+  $ cmake -DCMAKE_INSTALL_PREFIX=<your_path> ..
+  $ make install
+
+NB: If you want to use non-standard options or directories you can provide it to
+cmake using environment values or cmake command arguments.
+
+Usage
+=====
+
+Main program executable is called 'offline'. It is run as
+
+  $ ./offline -I 'input_module' -c config_file -o output_file <input_files> [-n max_events] [-i]
+
+Program will sequentially open input files, read and process events from there
+and write resulting events to output file. It can read data files of various
+types, but if file type is other than standard File, one must provide a valid
+class name for proper input module.
+
+Full list of command-line options is printed using '-h' option.

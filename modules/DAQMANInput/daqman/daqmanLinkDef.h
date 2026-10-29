@@ -1,0 +1,12 @@
+#pragma link C++ class Baseline+;
+#pragma link C++ class ChannelData+;
+#pragma link C++ class EventData+;
+#pragma link C++ class PulseFit+;
+#pragma link C++ class Pulse+;
+#pragma link C++ class Roi+;
+#pragma link C++ class Spe+;
+#pragma link C++ class SumOfIntegral+;
+#pragma link C++ class TOF+;
+#pragma link C++ class Unspikes+;
+#pragma link C++ class runinfo+;
+#pragma link C++ class std::pair<std::string, std::string>+;

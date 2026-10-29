@@ -1,0 +1,34 @@
+// the configured options and settings for REDOffline
+
+#define PACKAGE_NAME "@PROJECT_NAME@"
+#define PACKAGE_STRING "@PROJECT_NAME@ v@REDOffline_VERSION@"
+#define PACKAGE_TARNAME "@REDOffline_TOLOW@"
+#define PACKAGE_BUGREPORT "avkumpan@gmail.com"
+
+#define PACKAGE_VERSION_MAJOR @REDOffline_VERSION_MAJOR@
+#define PACKAGE_VERSION_MINOR @REDOffline_VERSION_MINOR@
+#define PACKAGE_VERSION_PATCH @REDOffline_VERSION_PATCH@
+#define PACKAGE_VERSION "@REDOffline_VERSION@"
+
+#define BUILD_CODE "User: $ENV{USER} Date: @CONFIG_DATE@ Rev: @REDOffline_GIT_CID@"
+#define BUILD_HOST "Host: $ENV{HOSTNAME} System: @CMAKE_SYSTEM_NAME@/@CMAKE_SYSTEM_PROCESSOR@ Compiler: @CMAKE_CXX_COMPILER_ID@/@CMAKE_CXX_COMPILER_VERSION@"
+#define BUILD_STRING "@PROJECT_NAME@ v@REDOffline_VERSION@ built by $ENV{USER} at @CONFIG_DATE@"
+
+#cmakedefine HAVE_LIMITS_H 1
+#cmakedefine HAVE_STDDEF_H 1
+#cmakedefine HAVE_STDINT_H 1
+#cmakedefine HAVE_STDLIB_H 1
+#cmakedefine HAVE_STRING_H 1
+
+#cmakedefine TYPE_UINT64T_SIZE @TYPE_UINT64T_SIZE@
+#cmakedefine TYPE_OFFT_SIZE @TYPE_OFFT_SIZE@
+#cmakedefine TYPE_PTRDIFFT_SIZE @TYPE_PTRDIFFT_SIZE@
+
+#cmakedefine HAVE_MEMSET 1
+#cmakedefine HAVE_STRTOL 1
+#cmakedefine HAVE_STRERROR 1
+#cmakedefine HAVE_LOCALTIME_R 1
+#cmakedefine HAVE_FLOOR 1
+#cmakedefine HAVE_POW 1
+#cmakedefine HAVE_SQRT 1
+

@@ -1,0 +1,40 @@
+Known issues:
+	Waveform.fNameOfWaveform is not filled
+
+ChangeLog:
+	Full changelog available with 'git log'
+
+2022-07-22 Vladimir Belov <belov@itep.ru>
+	Release version 0.2
+	Change build system to CMake
+	Automatically generate build configuration
+	Move major part of the code to distinct libraries and modules
+	Add command-line arguments
+	Begin documentation project
+	Introduce configuration file with processing parameters
+	Make some parameters per-channel based
+	Print modules configuration before processing
+	Introduce module factory to handle modules registry
+	Add support for multiple runs in a single file
+	Add support for ZeplinIII data files
+	Add support for COHERENT CsI data files
+	Add support for COHERENT CENNS-10 data files
+	Introduce specific clustering for each data type
+	Add module to correct waveforms for baseline overshoot
+	Add module to correct waveforms for low frequency pileup
+	Improve pulse finding algorythm
+	Switch to using TTimestamp for time stamps
+	Improve File class to read/write events as objects
+	Move to wider use of TRefs inside event
+	Improve Inspector module
+	Adapt code to use with ROOT6 and modern compilers
+	Fix many bugs
+
+2013-11-20 Vladimir Belov <belov@itep.ru>
+	Release version 0.1
+	Main event class Event created
+	Main interface for processing modules created
+	Created class File for read/write of events (legacy mode only)
+	Initial trivial implementation of PulseFinder module
+	Added Inspector module to show plots
+	Initial trivial implemetation of ClusteringModule
