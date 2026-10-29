@@ -1,0 +1,102 @@
+#!/bin/sh
+
+if [ "x$use_relative_path" != "xyes" ]; then
+  prefix=/usr/local
+  exec_prefix=/usr/local
+  includedir=/usr/local/include
+  libdir=/usr/local/lib
+else
+  prefix=`echo $0 | sed -e 's|/[^/]*$||; s|^[^/]*$|.|'`
+  exec_prefix=$prefix
+  includedir=$prefix/../include
+  libdir=$prefix/../lib
+fi
+
+usage()
+{
+    cat <<EOF
+Usage: redoffline-config [OPTION]
+
+Available values for OPTION include:
+
+  --help             display this help and exit
+  --prefix           install prefix
+  --version          version information
+  --features         list of all supported features
+  --build            show build id
+  --incdir           directory with header files
+  --cflags           compile flags and header paths
+  --libdir           directory with library files
+  --libs             link flags and libraries
+
+EOF
+
+    exit $1
+}
+
+if test $# -eq 0; then
+    echo "Usage: redoffline-config [--help] [--prefix] [--version] [--features] [--build] [--incdir] [--cflags] [--libdir] [--libs]"
+    exit 1;
+fi
+
+while test $# -gt 0; do
+    case "$1" in
+    # this deals with options in the style
+    # --option=value and extracts the value part
+    # [not currently used]
+    -*=*) value=`echo "$1" | sed 's/[-_a-zA-Z0-9]*=//'` ;;
+    *) value= ;;
+    esac
+
+    case "$1" in
+
+    --help)
+        usage 0
+        ;;
+
+    --prefix)
+        echo "$prefix"
+        ;;
+
+    --version)
+        echo "0.2.1"
+        exit 0
+        ;;
+
+    --feature|--features)
+        for feature in File GUI ""; do
+            test -n "$feature" && echo "$feature"
+        done
+        ;;
+
+    --build)
+        echo "REDOffline v0.2.1 built by lev at 2026-10-29T13:12:12"
+        exit 0
+        ;;
+
+    --incdir)
+        echo "$includedir"
+        ;;
+
+    --cflags)
+        echo "-I$includedir -I/usr/include/root"
+        ;;
+
+    --libdir)
+        echo "$libdir"
+        ;;
+
+    --libs)
+        echo "-L$libdir -lREDEvent -L/usr/lib64/root"
+        ;;
+
+    *)
+        echo "unknown option: $1"
+        usage 1
+        ;;
+    esac
+    shift
+done
+
+exit 0
+

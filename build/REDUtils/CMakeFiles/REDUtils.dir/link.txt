@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC  -Wall -Wno-unused-variable -Wno-unused-parameter -g -O0 -Wl,--dependency-file=CMakeFiles/REDUtils.dir/link.d -shared -Wl,-soname,libREDUtils.so -o libREDUtils.so CMakeFiles/REDUtils.dir/String.cc.o CMakeFiles/REDUtils.dir/System.cc.o  -Wl,-rpath,::::::::::::::
